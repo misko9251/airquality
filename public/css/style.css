@@ -1,0 +1,202 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font: 18px 'Montserrat', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input{
+    font: 18px 'Montserrat', sans-serif;
+    border: 0;
+    outline: 0;
+}
+
+/* Header Styles */
+
+.headerContainer{
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+header{
+    height: 400px;
+    background-image: url('/photos/header.jpg');
+    background-size: cover;
+    background-position-y: bottom;
+    color: white;
+}
+
+h1{
+    font: 40px 'Montserrat', sans-serif;
+    padding-top: 10%;
+    margin: 0 auto;
+    padding-bottom: 2%;
+}
+
+header > section > h1 + p {
+    font: 18px 'Montserrat', sans-serif;
+    font-weight: 200; 
+    padding-bottom: 2%;
+}
+
+.search{
+    font-weight: 200; 
+    width: 275px;
+    display: flex;
+    margin: 0 auto;
+    height: 40px;
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+button{
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    background: rgb(96, 225, 124);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+button:hover{
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    background: rgb(68, 67, 67);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    color: rgb(96, 225, 124);
+}
+
+.fa-location-dot{
+    color: black;
+    margin: auto 0;
+}
+
+/* First Section on Main Page */
+
+.aqiInfo{
+    background-color: rgb(227, 227, 227);
+    padding-bottom: 8%;
+}
+
+.aqiInfo > h3{
+    font-size: 35px;
+    text-align: center;
+    padding-top: 8%;
+    padding-bottom: 4%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.aqiInfo p{
+    font-size: 18px;
+    padding: 1% 5%;
+}
+
+.aqiInfoSpan{
+    font-weight: 200;
+}
+
+/* Pollution Photo */
+
+.pollutionContainer{
+    padding-top: 4%;
+    background-image: url('/photos/clouds.jpg');
+    background-size: cover;
+}
+
+.pollutionPicContainer{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 4%;
+}
+
+.pollutionPic{
+    width: 85%;
+    border-radius: 15px;
+}
+
+.pollutionInfo{
+    font-size: 15px;
+    width: 40%;
+    background-color: rgb(96, 225, 124);
+    padding: 4%;
+    border-radius: 15px;
+    margin-left: 4%;
+    position: relative;
+    bottom: 80px;
+}
+
+/* Footer */
+
+footer{
+    background-color: black;
+    /* height: 100px; */
+    color: white;
+    font-weight: 200;
+    text-align: center;
+    padding: 2% 0;
+}
+
+.fa-brands{
+    padding: 5px;
+}
+
+/* Media Query */
+
+@media all and (min-width: 1090px){
+    header{
+        height: 400px;
+        background-image: url('/photos/header.jpg');
+        background-size: cover;
+        background-position-y: -130px;
+        background-repeat: no-repeat;
+        color: white;
+    }
+}
