@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <title>Air Pollution</title>
     <script src="https://kit.fontawesome.com/c3a68ff822.js" crossorigin="anonymous"></script>
+    <script async
+    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCSPRLgihNgMzYFDQ-DyFlYRMIbfYWvUII&libraries=places&callback=initMap'>
+</script>
 </head>
 <body onload="fetchAQI()">
     <header class="headerDataPage">
@@ -25,6 +28,19 @@
         <h2>Air Quality at <span id="actualAddress"></span></h2>
         <h5>The closest AQI center is located in <span id="closestStation"></span></h5>
     </section>
+
+    <section class="dataContainer">
+        <section id="aqiInfoContainer">
+            <section class="aqiNumber">
+                <h5>AQI</h5>
+                <h5 id="aqiValue"></h5>
+            </section>
+            <section id="aqiStatus">
+                <h5>AQI Index is <span id="pollutionLevel"></span></h5>
+            </section>
+        </section>
+    </section>
+
     <footer>
         <h5>@miskocodes by Matthew Miskovsky</h5>
         <h5><i class="fa-brands fa-github"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-linkedin"></i></h5>

@@ -27,11 +27,17 @@ let address = (Object.values(params)[2])
 async function fetchAQI(){
     const response = await fetch(`https://api.waqi.info/feed/geo:${lat};${lng}/?token=3ae275f437e5587b7eabbc738d8f07aab52665a8`);
     const aqiData = await response.json();
-    let aqi = (aqiData.data.aqi);
+    let aqi = aqiData.data.aqi;
     console.log(aqiData);
     document.getElementById('actualAddress').innerText = address;
     document.getElementById('closestStation').innerText = aqiData.data.city.name;
+    document.getElementById('aqiValue').innerText = aqi;
+    if(aqi < 51){
+        document.getElementById('pollutionLevel').innerText = "good!"
+    }
 }
+
+pollutionLevel
 
 console.log(`The latitude is ${lat} and the longitude is ${lng}`)
 

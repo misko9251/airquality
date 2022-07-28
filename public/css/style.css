@@ -260,7 +260,8 @@ footer{
 .headerDataPage{
   display: flex;
   justify-content: space-between;
-  margin: 1%;
+  padding: 3%;
+  height: 50px;
 }
 
 .headerDataPage > h2{
@@ -283,4 +284,37 @@ footer{
 
 .aqiStation h2{
   font-size: 25px;
+}
+
+.dataContainer{
+  background-color: rgb(227, 227, 227);
+  padding-left: 3%;
+}
+
+#aqiInfoContainer{
+  background-color: rgb(71, 184, 140);
+  border-radius: 5px;
+  width: 40%;
+  height: 125px;
+  display: flex;
+}
+
+.aqiNumber{
+  background-color: rgb(136, 238, 199);
+  border-radius: 5px;
+  width: 30%;
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aqiNumber h5{
+  text-align: center;
+}
+
+#aqiStatus{
+  margin: auto 0;
+  text-align: center;
+  width: 100%;
 }
