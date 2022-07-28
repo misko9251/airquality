@@ -28,12 +28,33 @@ async function fetchAQI(){
     const response = await fetch(`https://api.waqi.info/feed/geo:${lat};${lng}/?token=3ae275f437e5587b7eabbc738d8f07aab52665a8`);
     const aqiData = await response.json();
     let aqi = aqiData.data.aqi;
-    console.log(aqiData);
     document.getElementById('actualAddress').innerText = address;
     document.getElementById('closestStation').innerText = aqiData.data.city.name;
     document.getElementById('aqiValue').innerText = aqi;
     if(aqi < 51){
-        document.getElementById('pollutionLevel').innerText = "good!"
+        document.getElementById('pollutionLevel').innerText = "good."
+        document.getElementById('aqiNumber').style.background = 'rgba(136, 238, 199)'
+        document.getElementById('aqiInfoContainer').style.background = 'rgba(71, 184, 140)'
+    }else if(aqi > 50 && aqi < 101){
+        document.getElementById('pollutionLevel').innerText = "moderate."
+        document.getElementById('aqiNumber').style.background = 'rgba(245, 245, 179)'
+        document.getElementById('aqiInfoContainer').style.background = 'rgba(177, 177, 83)'
+    }else if(aqi > 100 && aqi < 151){
+        document.getElementById('pollutionLevel').innerText = "unhealthy for moderate groups."
+        document.getElementById('aqiNumber').style.background = 'rgba(235, 206, 144)'
+        document.getElementById('aqiInfoContainer').style.background = 'rgba(184, 156, 95)'
+    }else if(aqi > 150 && aqi < 201){
+        document.getElementById('pollutionLevel').innerText = "unhealthy."
+        document.getElementById('aqiNumber').style.background = 'rgba(236, 159, 159)'
+        document.getElementById('aqiInfoContainer').style.background = 'rgba(228, 92, 92)'
+    }else if(aqi > 200 && aqi < 301){
+        document.getElementById('pollutionLevel').innerText = "very unhealthy."
+        document.getElementById('aqiNumber').style.background = 'rgba(231, 186, 231)'
+        document.getElementById('aqiInfoContainer').style.background = 'rgba(177, 112, 177)'
+    }else if(aqi > 300){
+        document.getElementById('pollutionLevel').innerText = "hazardous."
+        document.getElementById('aqiNumber').style.background = 'rgba(224, 71, 112)'
+        document.getElementById('aqiInfoContainer').style.background = 'rgba(136, 55, 77)'
     }
 }
 

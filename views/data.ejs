@@ -17,7 +17,7 @@
     src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCSPRLgihNgMzYFDQ-DyFlYRMIbfYWvUII&libraries=places&callback=initMap'>
 </script>
 </head>
-<body onload="fetchAQI()">
+<body class="dataBody" onload="fetchAQI()">
     <header class="headerDataPage">
         <h2>AQI Search</h2>
         <div class="fade-in search searchDataPage">
@@ -31,7 +31,7 @@
 
     <section class="dataContainer">
         <section id="aqiInfoContainer">
-            <section class="aqiNumber">
+            <section id="aqiNumber">
                 <h5>AQI</h5>
                 <h5 id="aqiValue"></h5>
             </section>
