@@ -14,20 +14,23 @@ function initMap() {
 }
 
 function navigateToDataPage() {
-    window.location.href=`${window.location.origin}/data?lat=${latitude}&lon=${longitude}`;
+    window.location.href=`${window.location.origin}/data?lat=${latitude}&lon=${longitude}&loc=${autocomplete.value}`;
 }
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 let lat = Object.values(params)[0]
 let lng = Object.values(params)[1]
+let address = (Object.values(params)[2])
 
 
 async function fetchAQI(){
     const response = await fetch(`https://api.waqi.info/feed/geo:${lat};${lng}/?token=3ae275f437e5587b7eabbc738d8f07aab52665a8`);
     const aqiData = await response.json();
     let aqi = (aqiData.data.aqi);
-    document.getElementById('aqi').innerText = aqi
+    console.log(aqiData);
+    document.getElementById('actualAddress').innerText = address;
+    document.getElementById('closestStation').innerText = aqiData.data.city.name;
 }
 
 console.log(`The latitude is ${lat} and the longitude is ${lng}`)

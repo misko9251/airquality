@@ -15,12 +15,15 @@
     <script src="https://kit.fontawesome.com/c3a68ff822.js" crossorigin="anonymous"></script>
 </head>
 <body onload="fetchAQI()">
-    <section class="aqiInfo">
-        <h3>The closest center is located in <span class="closestStation"></span></h3>
-        <h3>The air quality index is <span id="aqi">tbd</span>.</h3>
-        <div class="fade-in search">
+    <header class="headerDataPage">
+        <h2>AQI Search</h2>
+        <div class="fade-in search searchDataPage">
             <button id="getData"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button></i><input id="autocomplete" type="text" placeholder="Enter Location"><i class="fa-solid fa-location-dot"></i>
         </div>
+    </header>
+    <section class="aqiStation">
+        <h2>Air Quality at <span id="actualAddress"></span></h2>
+        <h5>The closest AQI center is located in <span id="closestStation"></span></h5>
     </section>
     <footer>
         <h5>@miskocodes by Matthew Miskovsky</h5>

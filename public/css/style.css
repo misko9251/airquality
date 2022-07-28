@@ -57,7 +57,7 @@ input{
     text-align: center;
 }
 
-header{
+.headerMainPage{
     height: 400px;
     background-image: url('/photos/header.jpg');
     background-size: cover;
@@ -253,4 +253,34 @@ footer{
     100% {
       opacity:1;
 }
+}
+
+/* Data Page */
+
+.headerDataPage{
+  display: flex;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.headerDataPage > h2{
+  align-self: center;
+}
+
+.searchDataPage{
+  margin: 0;
+  justify-self: flex-end;
+}
+
+#closestStation{
+  font-weight: bolder;
+}
+
+.aqiStation{
+  padding: 3%;
+  background-color: rgb(227, 227, 227);
+}
+
+.aqiStation h2{
+  font-size: 25px;
 }
