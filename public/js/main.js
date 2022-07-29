@@ -66,10 +66,16 @@ async function fetchAQI(){
 async function getWeather(){
     const response2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${lat}&lon=${lng}&appid=7b0f2c120e4676f27d74c46d2b0a2394`);
     const weather = await response2.json();
-    console.log(weather.weather[0].main);
+    console.log(weather);
+    document.getElementById('temp').innerText = weather.main.temp + '°'
     document.getElementById('forecast').innerText = weather.weather[0].main
+    document.getElementById('humidity').innerText = weather.main.humidity + '%'
+    document.getElementById('wind').innerText = weather.wind.speed + ' MPH'
 }
 
+// Forecast: weather[0].main
+// Humidity: weather.main.humidity + '%'
+// Wind: weather.wind.speed + ' MPH'
 
 console.log(`The latitude is ${lat} and the longitude is ${lng}`)
 
