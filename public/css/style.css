@@ -258,11 +258,13 @@ footer{
 /* Data Page */
 
 .headerDataPage{
+  color: white;
+  font-size: 30px;
   display: flex;
   justify-content: space-between;
   padding: 3%;
   height: 50px;
-  background-color: white;
+  background-color: rgb(32, 37, 45);
 }
 
 .headerDataPage > h2{
@@ -294,7 +296,6 @@ footer{
 }
 
 #aqiInfoContainer{
-  background-color: rgb(136, 55, 77);
   border-radius: 5px;
   width: 40%;
   height: 125px;
@@ -302,7 +303,6 @@ footer{
 }
 
 #aqiNumber{
-  background-color: rgb(224, 71, 112);
   border-radius: 5px;
   width: 30%;
   margin: 3%;
@@ -323,4 +323,34 @@ footer{
 
 .dataBody{
   background-color: rgb(227, 227, 227);
+  height: 100vh;
+}
+
+.aqiStation, .dataContainer{
+  display: none;
+}
+
+/* Weather Container and Info */
+
+#weatherContainer{
+  width: 60%;
+  margin: 0 3%;
+  background: rgb(202, 199, 199);
+  border-radius: 5px;
+  display: flex;
+}
+
+.fa-cloud{
+  color: rgb(32, 37, 45);
+}
+
+.iconAndForecast {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  border-radius: 5px;
+  background-color: white;
 }

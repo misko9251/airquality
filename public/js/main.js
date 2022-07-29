@@ -25,12 +25,17 @@ let address = (Object.values(params)[2])
 
 
 async function fetchAQI(){
+    getWeather();
     const response = await fetch(`https://api.waqi.info/feed/geo:${lat};${lng}/?token=3ae275f437e5587b7eabbc738d8f07aab52665a8`);
     const aqiData = await response.json();
+
     let aqi = aqiData.data.aqi;
+    document.querySelector('.aqiStation').style.display = 'block'
+    document.querySelector('.dataContainer').style.display = 'flex'
     document.getElementById('actualAddress').innerText = address;
     document.getElementById('closestStation').innerText = aqiData.data.city.name;
     document.getElementById('aqiValue').innerText = aqi;
+    console.log(aqiData.data)
     if(aqi < 51){
         document.getElementById('pollutionLevel').innerText = "good."
         document.getElementById('aqiNumber').style.background = 'rgba(136, 238, 199)'
@@ -58,7 +63,13 @@ async function fetchAQI(){
     }
 }
 
-pollutionLevel
+async function getWeather(){
+    const response2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${lat}&lon=${lng}&appid=7b0f2c120e4676f27d74c46d2b0a2394`);
+    const weather = await response2.json();
+    console.log(weather.weather[0].main);
+    document.getElementById('forecast').innerText = weather.weather[0].main
+}
+
 
 console.log(`The latitude is ${lat} and the longitude is ${lng}`)
 
