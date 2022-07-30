@@ -68,10 +68,13 @@ async function getWeather(){
     const response2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${lat}&lon=${lng}&appid=7b0f2c120e4676f27d74c46d2b0a2394`);
     const weather = await response2.json();
     let forecast = weather.weather[0].main
+    console.log(weather)
     document.getElementById('temp').innerText = weather.main.temp + '°'
     document.getElementById('forecast').innerText = forecast
     document.getElementById('humidity').innerText = weather.main.humidity + '%'
     document.getElementById('wind').innerText = weather.wind.speed + ' MPH'
+    document.getElementById('high').innerText = weather.main.temp_max + '°'
+    document.getElementById('low').innerText = weather.main.temp_min + '°'
 
     if(forecast == 'Clouds'){
         document.getElementById('weatherIcon').classList += ' fa-solid fa-cloud fa-3x'
@@ -117,7 +120,7 @@ async function createTable(){
         ]};
         
         let data4 = {
-            header: ["Name", "Micrograms per cubic meter"],
+            header: ["Name", "Ultraviolet Index"],
           rows: [
             [aqiData.data.forecast.daily.o3[2].day, aqiData.data.forecast.daily.uvi[1].avg],
             [aqiData.data.forecast.daily.o3[3].day, aqiData.data.forecast.daily.uvi[2].avg],

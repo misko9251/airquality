@@ -373,6 +373,18 @@ footer{
   align-items: center;
 }
 
+#highAndLow{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 2%;
+  margin-left: 0;
+  width: 37.5%;
+}
+
 #forecast, #humidity, #wind{
   font-weight: bolder;
 }
