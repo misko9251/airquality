@@ -78,8 +78,10 @@ async function getWeather(){
 
     if(forecast == 'Clouds'){
         document.getElementById('weatherIcon').classList += ' fa-solid fa-cloud fa-3x'
-    }if(forecast == 'Clear'){
+    }else if(forecast == 'Clear'){
         document.getElementById('weatherIcon').classList += ' fa-solid fa-sun fa-3x'
+    }else{
+        document.getElementById('weatherIcon').classList += ' fa-solid fa-sun-cloud'
     }
 }
 

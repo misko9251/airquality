@@ -191,7 +191,7 @@ footer{
 /* Media Query */
 
 @media all and (min-width: 1090px){
-    header{
+    .headerMainPage{
         height: 400px;
         background-image: url('/photos/header.jpg');
         background-size: cover;
