@@ -540,6 +540,17 @@ table{
   width: 60%;
   background-color: rgba(96, 225, 124, 0.8);
 }
+.search{
+  font-weight: 200; 
+  width: 300px;
+  display: flex;
+  margin: 0 auto;
+  height: 40px;
+  background-color: white;
+  padding: 2px 5px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
 }
 
 @media all and (max-width: 400px){
