@@ -13,9 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <title>Air Pollution</title>
     <script src="https://kit.fontawesome.com/c3a68ff822.js" crossorigin="anonymous"></script>
-    <script async
-    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCSPRLgihNgMzYFDQ-DyFlYRMIbfYWvUII&libraries=places&callback=initMap'>
-</script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.0/themes/dark_earth.min.js" type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/themes/2.0.0/dark_provence.min.js"></script>
 </head>
 <body class="dataBody" onload="fetchAQI()">
     <header class="headerDataPage">
@@ -24,6 +24,11 @@
             <button id="getData"><i class="fa-solid fa-magnifying-glass fa-xl"></i></button></i><input id="autocomplete" type="text" placeholder="Enter Location"><i class="fa-solid fa-location-dot"></i>
         </div>
     </header>
+
+    <section id="loading">
+        <h1>Loading your data... <i class="fa-solid fa-volcano"></i> <i class="fa-solid fa-temperature-half"></i> <i class="fa-solid fa-tornado"></i></h1>
+    </section>
+
     <section class="aqiStation">
         <h2>Air Quality at <span id="actualAddress"></span></h2>
         <h5>The closest AQI center is located in <span id="closestStation"></span></h5>
@@ -41,7 +46,7 @@
         </section>
         <section id="weatherContainer">
             <section class="iconAndForecast">
-                <section><i class="fa-solid fa-cloud fa-3x"></i></section>
+                <section><i id="weatherIcon" class="weatherIcon"></i></section>
                 <section><span id="temp"></span></section>
             </section>
             <section id="degreesContainer">
@@ -52,11 +57,74 @@
         </section>
     </section>
 
+    <section class="aqiChart">
+        <table>
+            <caption>AQI Particle Pollution</caption>
+            <tr>
+                <th class="white">AQI Color</th>
+                <th class="white">Values of Index</th>
+                <th class="white">Air Pollution Status</th>
+                <th class="white">Health Implications</th>
+            </tr>
+            <tr>
+                <td class="green">Green</td>
+                <td class="green">0-50</td>
+                <td class="green">Good</td>
+                <td class="green">The air quality is satisfactory. The air pollution currently poses little or no risk.</td>
+            </tr>
+            <tr>
+                <td class="yellow">Yellow</td>
+                <td class="yellow">51-100</td>
+                <td class="yellow">Moderate</td>
+                <td class="yellow">Air quality is acceptable. For some people there may be a risk. Particularly those sensitive to air pollution, such as people with respiratory disease.</td>
+            </tr>
+            <tr>
+                <td class="orange">Orange</td>
+                <td class="orange">101-150</td>
+                <td class="orange">Unhealthy for Sensitive Groups</td>
+                <td class="orange">Members of sensitive groups may experience health effects. The general public is less likely to be affected. Those with respiratory disease should limit outdoor exertion.</td>
+            </tr>
+            <tr>
+                <td class="red">Red</td>
+                <td class="red">151-200</td>
+                <td class="red">Unhealthy</td>
+                <td class="red">Members of sensitive groups are likely to experience more serious effects. Individuals within sensitive groups should limit prolonged outdoor exertion.</td>
+            </tr>
+            <tr>
+                <td class="purple">Purple</td>
+                <td class="purple">201-300</td>
+                <td class="purple">Very Unhealthy</td>
+                <td class="purple">Health warnings of emergency conditions. The risk of health effects is increased for everyone.</td>
+            </tr>
+            <tr>
+                <td class="maroon">Maroon</td>
+                <td class="maroon">300+</td>
+                <td class="maroon">Hazardous</td>
+                <td class="maroon">Health warning of emergency conditions: everyone is more likely to be affected. Everyone should avoid all outdoor exertion.</td>
+            </tr>
+        </table>
+        <h5>(www.airnow.gov)</h5>
+    </section>
+    
+    <h1 class="chartHeading">Pollutants</h1>
+    <section class="tableContainer">
+        <section class="pollutantsContainer">
+            <div id="container"></div>
+            <div id="container2"></div>
+        </section>
+        <section class="pollutantsContainer2">
+            <div id="container3"></div>
+            <div id="container4"></div>
+        </section>
+    </section>
+
     <footer>
         <h5>@miskocodes by Matthew Miskovsky</h5>
         <h5><i class="fa-brands fa-github"></i><i class="fa-brands fa-twitter"></i><i class="fa-brands fa-linkedin"></i></h5>
     </footer>
         
     <script src="js/main.js"></script>
+    <script async src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCSPRLgihNgMzYFDQ-DyFlYRMIbfYWvUII&libraries=places&callback=initMap'>
+    </script>
 </body>
 </html>
