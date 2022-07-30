@@ -47,7 +47,22 @@ input{
     font: 18px 'Montserrat', sans-serif;
     border: 0;
     outline: 0;
-    width: 250px;
+    /* width: 250px; */
+    width: 100%;
+    border: 2px solid green;
+}
+
+.search{
+  font-weight: 200; 
+  /* width: 275px; */
+  width: 65%;
+  display: flex;
+  margin: 0 auto;
+  height: 40px;
+  background-color: white;
+  padding: 2px 5px;
+  border-radius: 8px;
+  border: 3px solid purple;
 }
 
 /* Header Styles */
@@ -77,18 +92,6 @@ header > section > h1 + p {
     font: 18px 'Montserrat', sans-serif;
     font-weight: 200; 
     padding-bottom: 2%;
-}
-
-.search{
-    font-weight: 200; 
-    width: 275px;
-    display: flex;
-    margin: 0 auto;
-    height: 40px;
-    background-color: white;
-    padding: 2px 5px;
-    border-radius: 8px;
-    border: 1px solid black;
 }
 
 button{
@@ -541,7 +544,7 @@ table{
   width: 60%;
   background-color: rgba(96, 225, 124, 0.8);
 }
-.search{
+/* .search{
   font-weight: 200; 
   width: 300px;
   display: flex;
@@ -558,7 +561,7 @@ input{
   border: 0;
   outline: 0;
   width: 250px;
-}
+} */
 }
 
 @media all and (max-width: 400px){
