@@ -46,7 +46,7 @@ table {
 input{
     font: 18px 'Montserrat', sans-serif;
     border: 0;
-    /* outline: 0; */
+    outline: 0;
     width: 100%;
 }
 
