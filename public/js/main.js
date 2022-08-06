@@ -80,8 +80,10 @@ async function getWeather(){
         document.getElementById('weatherIcon').classList += ' fa-solid fa-cloud fa-3x'
     }else if(forecast == 'Clear'){
         document.getElementById('weatherIcon').classList += ' fa-solid fa-sun fa-3x'
-    }else{
-        document.getElementById('weatherIcon').classList += ' fa-solid fa-sun-cloud'
+    }else if(forecast == 'Rain'){
+        document.getElementById('weatherIcon').classList += ' fa-solid fa-cloud-rain fa-3x'
+    }else if(forecast == 'Thunderstorm'){
+        document.getElementById('weatherIcon').classList += ' fa-solid fa-cloud-bolt fa-3x'
     }
 }
 
